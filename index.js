@@ -44,14 +44,13 @@ if ('serviceWorker' in navigator) {
 const maxPitch = 0.5 * Math.PI
 const minPitch = -0.5 * Math.PI
 
-// Create three.js context, add to page
+// setup three.js
 const renderer = new THREE.WebGLRenderer()
 renderer.setPixelRatio(window.devicePixelRatio || 1)
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
-
-// Create viewer
 const viewer = new Viewer(renderer)
+
 
 // Menu panorama background
 function addPanoramaCubeMap () {
@@ -82,7 +81,8 @@ function addPanoramaCubeMap () {
 
   const group = new THREE.Object3D()
   group.add(panoramaBox)
-
+	
+  // spawn squid
   const Entity = require('prismarine-viewer/viewer/lib/entity/Entity')
   for (let i = 0; i < 42; i++) {
     const m = new Entity('1.16.4', 'squid').mesh
@@ -101,25 +101,26 @@ function addPanoramaCubeMap () {
 }
 
 const panoramaCubeMap = addPanoramaCubeMap()
-
 function removePanorama () {
   viewer.camera = new THREE.PerspectiveCamera(document.getElementById('options-screen').fov, window.innerWidth / window.innerHeight, 0.1, 1000)
   viewer.camera.updateProjectionMatrix()
   viewer.scene.remove(panoramaCubeMap)
 }
 
+
+// animation
 let animate = () => {
   window.requestAnimationFrame(animate)
   viewer.update()
   renderer.render(viewer.scene, viewer.camera)
 }
 animate()
-
 window.addEventListener('resize', () => {
   viewer.camera.aspect = window.innerWidth / window.innerHeight
   viewer.camera.updateProjectionMatrix()
   renderer.setSize(window.innerWidth, window.innerHeight)
 })
+
 
 const showEl = (str) => { document.getElementById(str).style = 'display:block' }
 async function main () {
@@ -134,6 +135,8 @@ async function main () {
   })
 }
 
+
+// connect to server
 async function connect (options) {
   const loadingScreen = document.getElementById('loading-screen')
 
@@ -401,6 +404,8 @@ async function connect (options) {
     }, 2500)
   })
 }
+
+
 
 /**
  * @param {URLSearchParams} params

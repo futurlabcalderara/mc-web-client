@@ -9,6 +9,7 @@ const path = require('path')
 const app = express()
 
 app.get('/config.json', (_, res) => res.sendFile(path.join(__dirname, 'config.json')))
+app.get('/text.json', (_, res) => res.sendFile(path.join(__dirname, 'text.json')))
 
 app.use(compression())
 app.use(netApi({ allowOrigin: '*' }))

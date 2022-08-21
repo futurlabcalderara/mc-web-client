@@ -1,0 +1,29 @@
+{
+	"symbol": ["§", "\\u00A7"]
+	"format": {
+		"l": {"name": "bold",          "html": "b"},
+		"m": {"name": "strikethrough", "html": "s"},
+		"n": {"name": "underline",     "html": "u"},
+		"o": {"name": "italic",        "html": "i"},
+		"k": {"name": "obfuscated",    "html": "■"},
+		"r": {"name": "reset",         "html": ""}
+	},
+	"colors": {
+		"0": {"color": "black",        "fg": "#000000", "bg": "#000000"},
+		"1": {"color": "dark_blue",    "fg": "#0000AA", "bg": "#00002A"},
+		"2": {"color": "dark_green",   "fg": "#00AA00", "bg": "#002A00"},
+		"3": {"color": "dark_aqua",    "fg": "#00AAAA", "bg": "#002A2A"},
+		"4": {"color": "dark_red",     "fg": "#AA0000", "bg": "#2A0000"},
+		"5": {"color": "dark_purple",  "fg": "#AA00AA", "bg": "#2A002A"},
+		"6": {"color": "gold",         "fg": "#FFAA00", "bg": "#2A2A00"},
+		"7": {"color": "gray",         "fg": "#AAAAAA", "bg": "#2A2A2A"},
+		"8": {"color": "dark_gray",    "fg": "#555555", "bg": "#151515"},
+		"9": {"color": "blue",         "fg": "#5555FF", "bg": "#15153F"},
+		"a": {"color": "green",        "fg": "#55FF55", "bg": "#153F15"},
+		"b": {"color": "aqua",         "fg": "#55FFFF", "bg": "#153F3F"},
+		"c": {"color": "red",          "fg": "#FF5555", "bg": "#3F1515"},
+		"d": {"color": "light_purple", "fg": "#FF55FF", "bg": "#3F153F"},
+		"e": {"color": "yellow",       "fg": "#FFFF55", "bg": "#3F3F15"},
+		"f": {"color": "white",        "fg": "#FFFFFF", "bg": "#3F3F3F"}
+	}
+}
